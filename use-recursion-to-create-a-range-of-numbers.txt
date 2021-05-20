@@ -1,0 +1,9 @@
+function rangeOfNumbers(startNum, endNum) {
+  if(startNum === endNum){
+    return [startNum];
+  } else {
+    const nums = rangeOfNumbers(startNum + 1, endNum);
+    nums.unshift(startNum);
+    return nums;
+  }
+};
