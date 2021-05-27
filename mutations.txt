@@ -1,0 +1,27 @@
+function mutation(arr) {
+  let testArr = arr[0].toLowerCase();
+  let mandatoryChars = arr[1].toLowerCase();
+  let isMatch;
+  console.log(mandatoryChars);
+  console.log(`test array: ${testArr}`)
+  
+  for(const char of mandatoryChars) {
+    if(testArr.includes(char)) {
+      isMatch = true;
+    } else {
+      isMatch = false;
+      break;
+    }
+  }
+  // mandatoryChars.forEach(char => {
+  //   if(testArr.includes(char)){
+  //     isMatch = true;
+  //   } else {
+  //     isMatch = false;
+  //     break;
+  //   }
+  // });
+  return isMatch;
+}
+
+mutation(["hello", "hey"]);

@@ -1,0 +1,7 @@
+function diffArray(arr1, arr2) {
+  let combinedArr = [...arr1, ...arr2];
+  return combinedArr.filter(num => combinedArr.indexOf(num) == combinedArr.lastIndexOf(num));
+  return result;
+}
+
+diffArray([1, 2, 3, 5], [1, 2, 3, 4, 5]);
