@@ -1,0 +1,10 @@
+function translatePigLatin(str) {
+  let regex = /(^[^aeiou]+)(.*)/;
+  if(regex.test(str)) {
+    return str.replace(regex, "$2$1ay");
+  } else {
+    return str.concat('way');
+  }
+}
+
+translatePigLatin("consonant");
