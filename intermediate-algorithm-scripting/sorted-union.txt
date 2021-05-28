@@ -1,0 +1,18 @@
+// The unique numbers should be sorted by their original order, but the final array should not be sorted in numerical order.
+
+function uniteUnique(arr) {
+  // spread arguments into array
+  let args = [...arguments];
+  let result = [];
+  // loop through each num in each arr and add to result if it doesn't exist yet.
+  args.forEach(arr => {
+    arr.forEach(num => {
+      if(result.indexOf(num) === -1) {
+        result.push(num);
+      }
+    })
+  })
+  return result; //[ 1, 3, 2, 5, 4 ]
+}
+
+uniteUnique([1, 3, 2], [5, 2, 1, 4], [2, 1]);

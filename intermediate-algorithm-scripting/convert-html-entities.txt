@@ -1,0 +1,12 @@
+function convertHTML(str) {
+  let result = str
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&apos;");
+  console.log(result); // Dolce &amp; Gabbana &lt;&gt;=&apos;&quot;
+  return result;
+}  
+
+convertHTML("Dolce & Gabbana <>='\"");
