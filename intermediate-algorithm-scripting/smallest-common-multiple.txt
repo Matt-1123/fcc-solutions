@@ -1,0 +1,27 @@
+function smallestCommons(arr) {
+  const [min, max] = arr.sort((a, b) => a - b);
+  const allDivisors = max - min + 1;
+  let result;
+
+  // Largest possible value for smallest common multiple
+  let upperBound = 1;
+  for (let i = min; i <= max; i++) {
+    upperBound *= i;
+  }
+
+  // Test all multiples of 'max'
+  for(let i = max; i < upperBound; i += max) {
+    let divisorCount = 0;
+    // test all integers between min and max.
+    for(let j = min; j <= max; j++) {
+      if(i % j === 0) {
+        divisorCount++; 
+      } 
+    }
+    if(divisorCount === allDivisors) {
+      return i;
+    }
+  }
+}
+  
+console.log(smallestCommons([5, 1]));

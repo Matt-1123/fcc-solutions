@@ -1,0 +1,28 @@
+function sumFibs(num) {
+  if(num < 1) {
+    return 0;
+  }
+
+  let prevNum = 0;
+  let currNum = 1;
+  
+  let sumOdds = 0;
+
+  // verify that sumOdds isn't greater than num param
+  while(currNum <= num) {
+    // add nextNum to sumOdds if odd
+    if(currNum % 2 !== 0) {
+      sumOdds += currNum;
+    }
+    // resets
+    let nextNum = prevNum + currNum;
+    prevNum = currNum;
+    currNum = nextNum;
+
+  }
+
+  return sumOdds;
+}
+
+console.log(sumFibs(5)); // 10
+console.log(sumFibs(13)) // 23

@@ -1,0 +1,10 @@
+// Flatten a nested array. You must account for varying levels of nesting.
+
+function steamrollArray(arr) {
+  let flattenedArr = [].concat(...arr);
+
+  // if there's a nested array, run it through this function again
+  return flattenedArr.some(item => Array.isArray(item)) ? steamrollArray(flattenedArr) : flattenedArr;
+}
+
+console.log(steamrollArray([1, [2], [3, [[4]]]])); // [1, 2, 3, 4]

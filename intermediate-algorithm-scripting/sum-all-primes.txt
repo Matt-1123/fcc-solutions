@@ -1,0 +1,20 @@
+function sumPrimes(num) {
+  let sumPrimes = 0;
+
+  const isPrime = n => {
+    for(let i = 2; i < n; i++)
+      if(n % i === 0) return false;
+    return n > 1;
+  }
+  
+  for(let i = 2; i <= num; i++){
+    if(isPrime(i) === true) {
+      sumPrimes += i;
+    }
+  }
+
+  return sumPrimes;
+}
+
+console.log(sumPrimes(10)); // 17
+console.log(sumPrimes(13)); // 41
